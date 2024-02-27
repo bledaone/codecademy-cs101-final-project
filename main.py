@@ -42,6 +42,6 @@ while board.is_won == False and board.full == False:
                 print("{} won!".format(opponent.name))
 
 if(board.full):
-    print("Board is full, .. game over")
+    print("Board is full, nobody wins, ... game over")
 else:
     print("Thanks a lot for playing Tic Tac Toe!") 
