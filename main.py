@@ -12,7 +12,7 @@ opponent = Player("Computer")
 board = Board()
 board.print_board()
 
-while board.is_won ==  False:
+while board.is_won == False and board.full == False:
     print("\n\n")
     print("You play as X, where do you want to put your piece?")
     row = input("Type the row number (0-2)>> ")
@@ -30,7 +30,7 @@ while board.is_won ==  False:
         print("Oops, wrong input position ... lets retry... ")
 
     computer_put = False
-    while player_put and computer_put == False and not board.is_won:
+    while player_put and computer_put == False and not board.is_won and not board.full:
         random_row = random.randint(0, board.rows - 1)
         random_column = random.randint(0, board.columns - 1)
         can_put = board.check_availability(random_row, random_column)
@@ -41,4 +41,7 @@ while board.is_won ==  False:
             if board.check_win("O"):
                 print("{} won!".format(opponent.name))
 
-print("Thanks a lot for playing Tic Tac Toe!") 
+if(board.full):
+    print("Board is full, .. game over")
+else:
+    print("Thanks a lot for playing Tic Tac Toe!") 

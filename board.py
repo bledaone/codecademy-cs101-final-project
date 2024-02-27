@@ -10,6 +10,9 @@ class Board:
         self.is_won = False
         self.rows = 3
         self.columns = 3
+        self.limit = self.rows * self.columns
+        self.used = 0
+        self.full = False
     
     def print_board(self):
         for row in range(self.rows):
@@ -28,6 +31,9 @@ class Board:
         if row >= 0 and row < self.rows and column >= 0 and column < self.columns \
         and self.cells[row][column] == "_":
             self.cells[row][column] = input_char.upper()
+            self.used += 1
+            if(self.used == self.limit):
+                self.full = True
             return True
         elif self.cells[row][column] != "_":
              print("Oops, that spot already occupied")
