@@ -40,4 +40,4 @@ while board.is_won ==  False:
             if board.check_win("O"):
                 print("{} won!".format(opponent.name))
 
-print("Thank you for playing Tic Tac Toe with us!")
+print("Thanks for playing Tic Tac Toe!")
