@@ -1,3 +1,4 @@
+
 from player import *
 from board import *
 import random
@@ -40,4 +41,4 @@ while board.is_won ==  False:
             if board.check_win("O"):
                 print("{} won!".format(opponent.name))
 
-print("Thanks for playing Tic Tac Toe!")
+print("Thanks a lot for playing Tic Tac Toe!")
