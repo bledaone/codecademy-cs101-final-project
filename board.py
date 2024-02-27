@@ -52,16 +52,22 @@ class Board:
                 prev_column = column - 1
                 next_column = column + 1
                 if(prev_row >= 0 and next_row < self.rows and
-                   prev_column >= 0 and next_column < self.columns):
+                   prev_column >= 0 and next_column < self.columns and
+                   self.cells[row][column] == check_char):
                     if self.cells[prev_row][prev_column] == check_char and self.cells[next_row][next_column] == check_char:
                         self.is_won = True
+                        print("A", row, column, check_char)
                         return True
                     if self.cells[prev_row][row] == check_char and self.cells[next_row][column] == check_char:
                         self.is_won = True
+                        print("B", row, column, check_char)
                         return True
                     if self.cells[prev_row][next_column] == check_char and self.cells[next_row][prev_column] == check_char:
                         self.is_won = True
+                        print("C", row, column, check_char)
                         return True
                     if self.cells[row][prev_column] == check_char and self.cells[row][next_column] == check_char:
                         self.is_won = True
+                        print("D", row, column, check_char)
                         return True
+                    
